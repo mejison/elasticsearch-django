@@ -7,16 +7,34 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
             name='ElasticDemo',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=100)),
-                ('content', models.TextField()),
+                ('customers_id', models.BigIntegerField()),
+                ('customers_vat_id_status', models.IntegerField()),
+                ('customers_status', models.IntegerField()),
+                ('customers_firstname', models.TextField()),
+                ('customers_lastname', models.TextField()),
+                ('customers_dob', models.DateTimeField(auto_now_add=True, blank=True)),
+                ('customers_email_address', models.EmailField()),
+                ('customers_default_address_id', models.IntegerField()),
+                ('customers_telephone', models.CharField(max_length=16)),
+                ('customers_password', models.CharField(max_length=32)),
+                ('customers_newsletter',models.IntegerField()),
+                ('customers_newsletter_mode', models.IntegerField()),
+                ('member_flag', models.IntegerField()),
+                ('delete_user', models.IntegerField()),
+                ('account_type', models.IntegerField()),
+                ('refferers_id', models.IntegerField()),
+                ('customers_date_added', models.DateTimeField(auto_now_add=True, blank=True)),
+                ('customers_last_modified', models.DateTimeField(auto_now_add=True, blank=True)),
+                ('login_tries', models.IntegerField()),
+                ('login_time', models.DateTimeField()),
+                ('customers_personal_discount', models.FloatField()),
             ],
         ),
     ]
